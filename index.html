@@ -390,19 +390,22 @@ function setupVideoSound(video, unmuteBtn) {
     video.muted = false;
     video.volume = 1;
     video.play().catch(() => {});
-    if (unmuteBtn) unmuteBtn.hidden = true;
+    if (unmuteBtn) unmuteBtn.style.visibility = 'hidden';
   }
 
   function tryPlayWithSound() {
     video.muted = false;
     return video.play()
-      .then(() => { if (unmuteBtn) unmuteBtn.hidden = true; })
+      .then(() => { if (unmuteBtn) unmuteBtn.style.visibility = 'hidden'; })
       .catch(() => {
         video.muted = true;
         return video.play().catch(() => {});
       })
       .then(() => {
-        if (video.muted && unmuteBtn) unmuteBtn.hidden = false;
+        if (video.muted && unmuteBtn) {
+          unmuteBtn.hidden = false;
+          unmuteBtn.style.visibility = '';
+        }
       });
   }
 
