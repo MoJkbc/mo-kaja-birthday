@@ -1265,3 +1265,13 @@ body {
   letter-spacing: 0.1em;
   color: #ff6b6b;
 }
+
+@media (max-width: 860px) and (max-height: 700px) {
+  .story-section:first-of-type .tag {
+    display: none;
+  }
+
+  .story-section:first-of-type .panel:has(.text-stack) {
+    padding-bottom: clamp(20px, 5vh, 40px);
+  }
+}
