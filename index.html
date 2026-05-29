@@ -36,11 +36,11 @@
           preload="auto"
           aria-label="Friends dancing at an outdoor party with live music"
         ></video>
-        <button type="button" class="video-unmute-btn hero-video-unmute" aria-label="Zapnout zvuk videa" hidden>
-          Zapnout zvuk
-        </button>
       </div>
     </figure>
+    <button type="button" class="video-unmute-btn hero-video-unmute" aria-label="Unmute video" hidden>
+      Unmute
+    </button>
   </div>
 
   <div class="text-panels">
@@ -68,7 +68,7 @@
         <div class="divider"></div>
         <div class="detail-item js-reveal" style="transition-delay:0.3s">
           <div class="d-label">Where</div>
-          <div class="d-val" style="font-size:clamp(18px,2.5vw,32px)">Prygl</div>
+          <div class="d-val">Prygl</div>
           <div class="d-sub">Brno, CZ</div>
         </div>
       </div>
@@ -105,7 +105,6 @@
         <span class="display js-reveal" style="font-size:clamp(28px,5.5vw,72px)">Maky even grew biceps<br>for this special occasion</span>
       </div>
     </div>
-    <div class="panel spacer" style="min-height:50vh;"></div>
     <div class="panel spacer-lg"></div>
   </div>
 </section>
@@ -296,8 +295,8 @@
           preload="metadata"
           aria-label="Kaja on skis"
         ></video>
-        <button type="button" class="video-unmute-btn chapter-video-unmute" aria-label="Zapnout zvuk videa" hidden>
-          Zapnout zvuk
+        <button type="button" class="video-unmute-btn chapter-video-unmute" aria-label="Unmute video" hidden>
+          Unmute
         </button>
       </div>
     </figure>
@@ -382,6 +381,11 @@
   </div>
 </div>
 
+<footer class="site-footer">
+  <p>&copy; Moni 2026</p>
+  <p>Only for your eyes</p>
+</footer>
+
 <script src="stickers.js" defer></script>
 <script>
 // Intersection Observer for reveal animations
@@ -458,10 +462,28 @@ window.addEventListener('scroll', () => {
   document.getElementById('prog').style.width = pct + '%';
 }, { passive: true });
 
+// Site header height for mobile fact sticky offset (CSS var only)
+function syncSiteHeaderOffset() {
+  const header = document.getElementById('siteHeader');
+  if (!header) return;
+  const h = Math.round(header.getBoundingClientRect().height);
+  if (h > 0) {
+    document.documentElement.style.setProperty('--site-header-offset', `${h}px`);
+  }
+}
+syncSiteHeaderOffset();
+window.addEventListener('resize', syncSiteHeaderOffset);
+window.addEventListener('load', syncSiteHeaderOffset);
+document.fonts?.ready?.then(syncSiteHeaderOffset);
+const siteHeaderEl = document.getElementById('siteHeader');
+if (siteHeaderEl && typeof ResizeObserver !== 'undefined') {
+  new ResizeObserver(syncSiteHeaderOffset).observe(siteHeaderEl);
+}
+
 // Subtle parallax on sticky images
 const stickyMedia = document.querySelectorAll('.sticky-image img, .sticky-image video');
 window.addEventListener('scroll', () => {
-  stickyMedia.forEach(el => {
+  stickyMedia.forEach((el) => {
     const section = el.closest('.story-section');
     if (!section) return;
     const rect = section.getBoundingClientRect();
