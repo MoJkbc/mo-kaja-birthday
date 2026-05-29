@@ -501,6 +501,7 @@ window.addEventListener('scroll', () => {
       sessionStorage.setItem('authed', correctHash);
       gate.classList.add('password-gate--out');
       document.body.style.overflow = '';
+      window.scrollTo(0, 0);
       setTimeout(() => gate.remove(), 600);
     } else {
       err.hidden = false;
