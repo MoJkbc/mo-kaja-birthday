@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mo & Kaja Birthday</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="progress-bar" id="prog"></div>
+<div class="sticker-field" id="stickerField" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <p class="site-header__title">Drahé tety slaví</p>
+  <p class="site-header__meta">18. 6. 2026 &nbsp;·&nbsp; 19:00 &nbsp;·&nbsp; Prygl</p>
+</header>
+
+<!-- ═══════════════════════════════════
+     SECTION 1 — HERO / OPENER
+═══════════════════════════════════ -->
+<section class="story-section">
+  <div class="sticky-image">
+    <figure class="photo-block photo-block--story">
+      <div class="photo-block__frame">
+        <video
+          class="photo-block__img story-video hero-video"
+          src="images/hero-party.mp4"
+          poster="images/hero-party-poster.jpg"
+          width="480"
+          height="848"
+          autoplay
+          loop
+          playsinline
+          webkit-playsinline
+          preload="auto"
+          aria-label="Friends dancing at an outdoor party with live music"
+        ></video>
+        <button type="button" class="video-unmute-btn hero-video-unmute" aria-label="Zapnout zvuk videa" hidden>
+          Zapnout zvuk
+        </button>
+      </div>
+    </figure>
+  </div>
+
+  <div class="text-panels">
+    <div class="panel spacer"></div>
+    <div class="panel">
+      <div class="text-stack">
+        <div class="tag js-reveal">Birthday Party</div>
+        <span class="display js-reveal">You are</span>
+        <span class="display outline js-reveal" style="transition-delay: 0.12s">invited.</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="details-row">
+        <div class="detail-item js-reveal" style="transition-delay:0.1s">
+          <div class="d-label">When</div>
+          <div class="d-val">18. 6.</div>
+          <div class="d-sub">2026</div>
+        </div>
+        <div class="divider"></div>
+        <div class="detail-item js-reveal" style="transition-delay:0.2s">
+          <div class="d-label">Time</div>
+          <div class="d-val">19:00</div>
+          <div class="d-sub">or something like that</div>
+        </div>
+        <div class="divider"></div>
+        <div class="detail-item js-reveal" style="transition-delay:0.3s">
+          <div class="d-label">Where</div>
+          <div class="d-val" style="font-size:clamp(18px,2.5vw,32px)">Prygl</div>
+          <div class="d-sub">Brno, CZ</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel spacer-lg"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 2 — Fact 01
+═══════════════════════════════════ -->
+<section class="story-section">
+  <div class="sticky-image">
+    <figure class="photo-block photo-block--story">
+      <div class="photo-block__frame">
+        <img
+          class="photo-block__img story-photo"
+          src="images/managerka-bicaky.png"
+          alt="Manažerka zábavy flexing at the climbing gym"
+          width="576"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </figure>
+  </div>
+
+  <div class="text-panels">
+    <div class="panel spacer"></div>
+    <div class="panel mid">
+      <div class="text-stack">
+        <div class="caption js-reveal">Fact 01</div>
+        <span class="display js-reveal" style="font-size:clamp(28px,5.5vw,72px)">Maky even grew biceps<br>for this special occasion</span>
+      </div>
+    </div>
+    <div class="panel spacer" style="min-height:50vh;"></div>
+    <div class="panel spacer-lg"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 3 — Food
+═══════════════════════════════════ -->
+<section class="story-section">
+  <div class="sticky-image">
+    <figure class="photo-block photo-block--story">
+      <div class="photo-block__frame">
+        <img
+          class="photo-block__img story-photo"
+          src="images/food-restaurant.jpg"
+          alt="Two friends eating at a restaurant"
+          width="778"
+          height="360"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </figure>
+
+    <div class="food-gallery js-reveal" aria-label="More eating moments">
+      <img
+        class="food-gallery__img"
+        src="images/food-bench.jpg"
+        alt="Two friends eating pastries on a bench outside a bakery"
+        width="768"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        class="food-gallery__img"
+        src="images/food-sushi.jpg"
+        alt="Friends sharing sushi at the climbing crag"
+        width="768"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        class="food-gallery__img"
+        src="images/food-crag.jpg"
+        alt="Climber eating a snack on a crash pad at the crag"
+        width="768"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        class="food-gallery__img"
+        src="images/food-bed.jpg"
+        alt="Eating in bed with a bowl and books"
+        width="768"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+
+  <div class="text-panels">
+    <div class="panel spacer"></div>
+    <div class="panel center">
+      <div class="text-stack" style="text-align:center; max-width:800px;">
+        <div class="caption js-reveal" style="margin:0 auto 20px; text-align:center">Fact 02</div>
+        <span class="display js-reveal" style="font-size:clamp(32px,6.5vw,80px)">There is hardly time<br>when we do not eat</span>
+      </div>
+    </div>
+    <div class="panel spacer-lg"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 4 — And we often bleed
+═══════════════════════════════════ -->
+<section class="story-section">
+  <div class="sticky-image">
+    <figure class="photo-block photo-block--story">
+      <div class="photo-block__frame">
+        <img
+          class="photo-block__img story-photo"
+          src="images/often-bleed.jpg"
+          alt="Cyclist showing scrapes on elbow and knee after a ride"
+          width="768"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </figure>
+  </div>
+
+  <div class="text-panels">
+    <div class="panel spacer"></div>
+    <div class="panel center">
+      <div class="text-stack" style="text-align:center; max-width:800px;">
+        <div class="caption js-reveal" style="margin:0 auto 20px; text-align:center">Fact 03</div>
+        <span class="display js-reveal" style="font-size:clamp(32px,6.5vw,80px)">And we often bleed</span>
+      </div>
+    </div>
+    <div class="panel spacer-lg"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 5 — Fact 04
+═══════════════════════════════════ -->
+<section class="story-section">
+  <div class="sticky-image">
+    <figure class="photo-block photo-block--story">
+      <div class="photo-block__frame">
+        <img
+          class="photo-block__img story-photo"
+          src="images/support-jakubcova.jpg"
+          alt="Smiling at a Hangar Rockets event with a Jakubcová name tag"
+          width="768"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </figure>
+  </div>
+
+  <div class="text-panels">
+    <div class="panel spacer"></div>
+    <div class="panel right">
+      <div class="text-stack" style="text-align:right; max-width:600px;">
+        <div class="caption js-reveal" style="text-align:right">Fact 04</div>
+        <span class="display js-reveal" style="font-size:clamp(28px,5.5vw,72px)">But we support<br>each other</span>
+      </div>
+    </div>
+    <div class="panel spacer-lg"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 6 — Fact 05 — And love each other
+═══════════════════════════════════ -->
+<section class="story-section">
+  <div class="sticky-image">
+    <figure class="photo-block photo-block--story">
+      <div class="photo-block__frame">
+        <img
+          class="photo-block__img story-photo"
+          src="images/love-each-other.jpg"
+          alt="Two friends hugging on skis in a snowy forest"
+          width="768"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </figure>
+  </div>
+
+  <div class="text-panels">
+    <div class="panel spacer"></div>
+    <div class="panel center">
+      <div class="text-stack" style="text-align:center; max-width:800px;">
+        <div class="caption js-reveal" style="margin:0 auto 20px; text-align:center">Fact 05</div>
+        <span class="display js-reveal" style="font-size:clamp(32px,6.5vw,80px)">And love<br>each other</span>
+      </div>
+    </div>
+    <div class="panel spacer-lg"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 7 — Fact 06
+═══════════════════════════════════ -->
+<section class="story-section">
+  <div class="sticky-image">
+    <figure class="photo-block photo-block--story">
+      <div class="photo-block__frame">
+        <video
+          class="photo-block__img story-video chapter-video"
+          src="images/kaja-lyze.mp4"
+          width="480"
+          height="848"
+          autoplay
+          loop
+          playsinline
+          webkit-playsinline
+          preload="metadata"
+          aria-label="Kaja on skis"
+        ></video>
+        <button type="button" class="video-unmute-btn chapter-video-unmute" aria-label="Zapnout zvuk videa" hidden>
+          Zapnout zvuk
+        </button>
+      </div>
+    </figure>
+  </div>
+
+  <div class="text-panels">
+    <div class="panel spacer"></div>
+    <div class="panel right">
+      <div class="text-stack" style="text-align:right; max-width:600px;">
+        <div class="caption js-reveal" style="text-align:right">Fact 06</div>
+        <span class="display js-reveal" style="font-size:clamp(28px,5.5vw,72px)">Even when life<br>gets like this</span>
+      </div>
+    </div>
+    <div class="panel spacer-lg"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SECTION 8 — Fact 07 — Fish
+═══════════════════════════════════ -->
+<section class="story-section">
+  <div class="sticky-image">
+    <figure class="photo-block photo-block--story">
+      <div class="photo-block__frame">
+        <img
+          class="photo-block__img story-photo"
+          src="images/ferry-fish.jpg"
+          alt="Three friends smiling on a boat in life jackets at sea"
+          width="768"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </figure>
+  </div>
+
+  <div class="text-panels">
+    <div class="panel spacer"></div>
+    <div class="panel center">
+      <div class="text-stack" style="text-align:center; max-width:800px;">
+        <div class="caption js-reveal" style="margin:0 auto 20px; text-align:center">Fact 07</div>
+        <span class="display js-reveal" style="font-size:clamp(28px,5.5vw,72px)">And we are prepared to face<br>all the fish</span>
+      </div>
+    </div>
+    <div class="panel spacer-lg"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     CTA — RSVP / CLOSING
+═══════════════════════════════════ -->
+<div class="cta-section">
+  <div class="cta-eyebrow">You're officially summoned</div>
+  <div class="cta-title js-reveal-light">
+    See you<br>there.
+  </div>
+  <figure class="photo-block cta-photo js-reveal-light">
+    <div class="photo-block__frame">
+      <img
+        class="photo-block__img cta-photo__img"
+        src="images/see-you-there.png"
+        alt="Celebrating at the climbing wall"
+        width="1024"
+        height="682"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </figure>
+  <div class="cta-sub js-reveal-light">
+    Prygl &nbsp;·&nbsp; 18. 6. 2026 &nbsp;·&nbsp; 19:00
+  </div>
+  <div class="cta-activities" aria-label="Activities">
+    <span class="act-sticker act-sticker--orange">Steaks</span>
+    <span class="act-sticker act-sticker--purple">Beer</span>
+    <span class="act-sticker act-sticker--blue">Beach volleyball</span>
+    <span class="act-sticker act-sticker--lime">Swimming</span>
+    <span class="act-sticker act-sticker--yellow">American football</span>
+    <span class="act-sticker act-sticker--cream">Laughing</span>
+    <span class="act-sticker act-sticker--pink">Watching sunset</span>
+  </div>
+</div>
+
+<script src="stickers.js" defer></script>
+<script>
+// Intersection Observer for reveal animations
+const revealEls = document.querySelectorAll('.js-reveal');
+const revealLightEls = document.querySelectorAll('.js-reveal-light');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+const lightObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+revealLightEls.forEach(el => lightObserver.observe(el));
+
+// Video with sound — try autoplay with audio; fallback to muted + unmute button
+function setupVideoSound(video, unmuteBtn) {
+  function soundOn() {
+    video.muted = false;
+    video.volume = 1;
+    video.play().catch(() => {});
+    if (unmuteBtn) unmuteBtn.hidden = true;
+  }
+
+  function tryPlayWithSound() {
+    video.muted = false;
+    return video.play()
+      .then(() => { if (unmuteBtn) unmuteBtn.hidden = true; })
+      .catch(() => {
+        video.muted = true;
+        return video.play().catch(() => {});
+      })
+      .then(() => {
+        if (video.muted && unmuteBtn) unmuteBtn.hidden = false;
+      });
+  }
+
+  unmuteBtn?.addEventListener('click', soundOn);
+  return { soundOn, tryPlayWithSound };
+}
+
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  const hero = setupVideoSound(heroVideo, document.querySelector('.hero-video-unmute'));
+  hero.tryPlayWithSound();
+  heroVideo.addEventListener('loadeddata', () => hero.tryPlayWithSound(), { once: true });
+}
+
+document.querySelectorAll('.chapter-video').forEach((chapterVideo) => {
+  const unmuteBtn = chapterVideo.closest('.photo-block__frame')?.querySelector('.chapter-video-unmute');
+  const chapter = setupVideoSound(chapterVideo, unmuteBtn);
+  const chapterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) chapter.tryPlayWithSound();
+      else chapterVideo.pause();
+    });
+  }, { threshold: 0.2 });
+  chapterObserver.observe(chapterVideo);
+});
+
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = (window.scrollY / max) * 100;
+  document.getElementById('prog').style.width = pct + '%';
+}, { passive: true });
+
+// Subtle parallax on sticky images
+const stickyMedia = document.querySelectorAll('.sticky-image img, .sticky-image video');
+window.addEventListener('scroll', () => {
+  stickyMedia.forEach(el => {
+    const section = el.closest('.story-section');
+    if (!section) return;
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+    if (rect.bottom > 0 && rect.top < vh) {
+      const progress = Math.max(0, Math.min(1, -rect.top / (section.offsetHeight - vh)));
+      const offset = (progress - 0.5) * 36;
+      el.style.transform = `translateY(${offset}px)`;
+    }
+  });
+}, { passive: true });
+</script>
+
+</body>
+</html>
