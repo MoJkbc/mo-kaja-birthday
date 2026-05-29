@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<div class="password-gate" id="passwordGate">
+  <div class="password-gate__box">
+    <p class="password-gate__label">Enter password</p>
+    <input class="password-gate__input" id="passwordInput" type="password" placeholder="···" autofocus />
+    <button class="password-gate__btn" id="passwordBtn">Enter</button>
+    <p class="password-gate__error" id="passwordError" hidden>Wrong password</p>
+  </div>
+</div>
+
 <div class="progress-bar" id="prog"></div>
 <div class="sea-field" id="seaField" aria-hidden="true"></div>
 
@@ -460,6 +469,46 @@ window.addEventListener('scroll', () => {
     }
   });
 }, { passive: true });
+
+// Password gate
+(function() {
+  const hash = 'a3d2f8c1';
+  function simpleHash(s) {
+    let h = 0;
+    for (let i = 0; i < s.length; i++) {
+      h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    }
+    return (h >>> 0).toString(16);
+  }
+  const correctHash = simpleHash('drahetety');
+
+  if (sessionStorage.getItem('authed') === correctHash) {
+    document.getElementById('passwordGate').remove();
+    return;
+  }
+
+  document.body.style.overflow = 'hidden';
+  const gate = document.getElementById('passwordGate');
+  const input = document.getElementById('passwordInput');
+  const btn = document.getElementById('passwordBtn');
+  const err = document.getElementById('passwordError');
+
+  function check() {
+    if (simpleHash(input.value.trim().toLowerCase()) === correctHash) {
+      sessionStorage.setItem('authed', correctHash);
+      gate.classList.add('password-gate--out');
+      document.body.style.overflow = '';
+      setTimeout(() => gate.remove(), 600);
+    } else {
+      err.hidden = false;
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  btn.addEventListener('click', check);
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') check(); });
+})();
 </script>
 
 </body>
