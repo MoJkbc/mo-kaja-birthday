@@ -8,6 +8,9 @@
   --baby-pink: #ffafcc;
   --icy-blue: #bde0fe;
   --sky-blue: #a2d2ff;
+  --ocean-teal: #6bb9d2;
+  --sea-foam: #82d2c8;
+  --deep-ocean: #1a3a4a;
   --dark-amethyst: #231942;
   --dusty-grape: #5e548e;
   --amethyst-smoke: #9f86c0;
@@ -803,13 +806,11 @@ body {
 
 .food-gallery {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  justify-content: center;
-  gap: clamp(6px, 1.2vw, 10px);
-  width: 100%;
-  margin-top: clamp(14px, 2.5vh, 22px);
+  flex-direction: column;
+  align-items: stretch;
+  gap: clamp(14px, 3vh, 24px);
+  width: 80%;
+  margin: clamp(20px, 4vh, 32px) auto 0;
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -821,18 +822,45 @@ body {
 }
 
 .food-gallery__img {
-  display: block;
-  flex: 0 0 auto;
-  width: auto;
-  height: auto;
-  max-height: min(10vh, 72px);
-  max-width: min(6vw, 44px);
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: clamp(100px, 18vh, 180px) !important;
+  max-width: 55% !important;
   object-fit: cover;
   object-position: center;
   border: none;
-  border-radius: 0;
-  box-shadow: none;
+  border-radius: 3px;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(224, 177, 203, 0.06);
   background: none;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.food-gallery__img:nth-child(1) {
+  transform: rotate(-3deg) translateX(-10%);
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+.food-gallery__img:nth-child(2) {
+  transform: rotate(2.5deg) translateX(8%);
+  align-self: flex-end;
+  margin-right: 2%;
+}
+
+.food-gallery__img:nth-child(3) {
+  transform: rotate(-1.5deg) translateX(5%);
+  align-self: flex-start;
+  margin-left: 18%;
+}
+
+.food-gallery__img:nth-child(4) {
+  transform: rotate(3.5deg) translateX(-5%);
+  align-self: flex-end;
+  margin-right: 15%;
 }
 
 .photo-block.inter-photo {
@@ -883,82 +911,84 @@ body {
   line-height: 1;
 }
 
-/* ─── Decorative stickers — fixed viewport layer, behind all sections ─── */
-.sticker-field {
+/* ─── Sea doodle decorations ─── */
+.sea-field {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
-.sticker {
+.sea-doodle {
   position: absolute;
-  transform: translate(-50%, -50%) rotate(var(--sticker-rot, 0deg));
-  opacity: 0.62;
-  animation: none;
-  filter: drop-shadow(0 3px 0 rgba(26, 20, 48, 0.35))
-    drop-shadow(0 6px 14px rgba(35, 25, 66, 0.22));
+  transform: rotate(var(--doodle-rot, 0deg));
+  opacity: 0;
+  animation-fill-mode: both;
+  will-change: transform, opacity;
 }
 
-.sticker[data-layer='back'] {
-  z-index: 0;
-  opacity: 0.48;
-}
-
-.sticker[data-layer='mid'] {
-  z-index: 1;
-  opacity: 0.58;
-}
-
-.sticker[data-layer='front'] {
-  z-index: 2;
-  opacity: 0.72;
-}
-
-.sticker--bit {
-  opacity: 0.88;
-  filter: drop-shadow(0 2px 0 rgba(26, 20, 48, 0.5))
-    drop-shadow(0 4px 10px rgba(35, 25, 66, 0.25));
-}
-
-.sticker--bit[data-layer='back'] { opacity: 0.72; }
-.sticker--bit[data-layer='mid'] { opacity: 0.82; }
-.sticker--bit[data-layer='front'] { opacity: 0.92; }
-
-.sticker svg {
+.sea-doodle svg {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.sticker--squiggle,
-.sticker--wave {
-  width: auto !important;
-  max-width: min(48vw, 180px);
+.drift-slow {
+  animation: sea-swim-lr 32s linear infinite, sea-bob-slow 6s ease-in-out infinite, sea-fade-in 2s ease forwards;
 }
 
-.sticker--pill,
-.sticker--striped-pill {
-  width: auto !important;
-  max-width: min(32vw, 110px);
+.drift-med {
+  animation: sea-swim-rl 26s linear infinite, sea-bob-med 5s ease-in-out infinite, sea-fade-in 2s ease forwards;
 }
 
-.sticker--dots {
-  width: auto !important;
-  max-width: min(40vw, 150px);
+@keyframes sea-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.sticker--trapezoid,
-.sticker--arch,
-.sticker--heart,
-.sticker--nested-heart {
-  max-width: min(40vw, 130px);
+@keyframes sea-swim-lr {
+  0%   { left: -10%; }
+  100% { left: 110%; }
 }
 
-.sticker--bit {
-  width: auto !important;
-  max-width: min(14vw, 52px);
+@keyframes sea-swim-rl {
+  0%   { left: 110%; }
+  100% { left: -10%; }
+}
+
+@keyframes sea-bob-slow {
+  0%, 100% { translate: 0 0; rotate: calc(var(--doodle-rot, 0deg)); }
+  25% { translate: 0 -10px; rotate: calc(var(--doodle-rot, 0deg) + 3deg); }
+  50% { translate: 0 6px; rotate: calc(var(--doodle-rot, 0deg) - 2deg); }
+  75% { translate: 0 -8px; rotate: calc(var(--doodle-rot, 0deg) + 2deg); }
+}
+
+@keyframes sea-bob-med {
+  0%, 100% { translate: 0 0; rotate: calc(var(--doodle-rot, 0deg)); }
+  33% { translate: 0 8px; rotate: calc(var(--doodle-rot, 0deg) - 3deg); }
+  66% { translate: 0 -12px; rotate: calc(var(--doodle-rot, 0deg) + 4deg); }
+}
+
+.sea-doodle--wave-full {
+  width: 100vw !important;
+  max-width: none !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: 0 !important;
+  height: 120px;
+  transform: none !important;
+  animation: sea-fade-in 2s ease forwards !important;
+}
+
+@media (max-width: 860px) {
+  .sea-doodle {
+    transform: translate(-50%, -50%) rotate(var(--doodle-rot, 0deg)) scale(0.7);
+  }
+
 }
 
 @media (max-width: 860px) {
@@ -969,14 +999,6 @@ body {
 
   .site-header {
     padding: 10px 0;
-  }
-
-  .sticker-field .sticker:nth-child(n + 9) {
-    display: none;
-  }
-
-  .sticker {
-    transform: translate(-50%, -50%) rotate(var(--sticker-rot, 0deg)) scale(0.85);
   }
 
   .story-section,
@@ -1105,6 +1127,7 @@ body {
       56px,
       calc(env(safe-area-inset-top, 0px) + var(--site-header-offset, 56px) + 12px)
     );
+    top: clamp(12px, 3vh, 24px);
   }
 
   .story-section:not(:first-of-type) .sticky-image {
@@ -1129,16 +1152,8 @@ body {
   }
 
   .food-gallery {
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: min(78vw, 340px);
-    margin-top: 16px;
-    gap: 8px;
-  }
-
-  .food-gallery__img {
-    max-height: min(11vh, 56px);
-    max-width: min(12vw, 42px);
+    width: 95%;
+    margin-top: 14px;
   }
 
   .cta-photo,
